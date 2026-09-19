@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oviya Sivakumar - Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --ink: #1c1c1c;
+        --muted: #55565c;
+        --rule: #c9ccd3;
+        --accent: #7a1f2b;
+    }
+    * { box-sizing: border-box; }
+    @page { size: Letter; margin: 0.3in 0.55in; }
+    html, body {
+        margin: 0;
+        padding: 0;
+        color: var(--ink);
+        font-family: 'Karla', Arial, sans-serif;
+        font-size: 9pt;
+        line-height: 1.2;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .page {
+        max-width: 7.4in;
+        margin: 0 auto;
+        padding: 0.05in 0;
+    }
+
+    /* Header */
+    header.resume-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-bottom: 2.5px solid var(--accent);
+        padding-bottom: 5px;
+        margin-bottom: 7px;
+    }
+    header.resume-header .name {
+        font-family: 'Lora', Georgia, serif;
+        font-weight: 700;
+        font-size: 21pt;
+        letter-spacing: 0.3px;
+        color: var(--ink);
+    }
+    header.resume-header .role {
+        font-family: 'Karla', Arial, sans-serif;
+        font-size: 9.5pt;
+        color: var(--accent);
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        margin-top: 2px;
+        font-weight: 600;
+    }
+    .contact-block {
+        text-align: right;
+        font-size: 9pt;
+        color: var(--muted);
+        line-height: 1.55;
+    }
+    .contact-block a { color: var(--muted); text-decoration: none; }
+
+    /* Section */
+    section { margin-bottom: 3px; }
+    h2.section-title {
+        font-family: 'Lora', Georgia, serif;
+        font-size: 10.8pt;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        color: var(--accent);
+        margin: 0 0 4px 0;
+        padding-bottom: 2px;
+        border-bottom: 0.75px solid var(--rule);
+        break-after: avoid-page;
+    }
+
+    /* Entry rows */
+    .entry { margin-bottom: 4px; break-inside: avoid-page; page-break-inside: avoid; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+    }
+    .entry-title {
+        font-weight: 700;
+        font-size: 10.3pt;
+    }
+    .entry-org {
+        font-style: italic;
+        color: var(--muted);
+        font-weight: 400;
+    }
+    .entry-date {
+        white-space: nowrap;
+        font-size: 9pt;
+        color: var(--muted);
+        font-weight: 600;
+    }
+    .entry-sub {
+        font-size: 9.3pt;
+        color: var(--muted);
+        margin-top: 0.5px;
+    }
+    ul.bullets {
+        margin: 2px 0 0 0;
+        padding-left: 15px;
+    }
+    ul.bullets li {
+        margin-bottom: 0.5px;
+    }
+
+    /* Education specifics */
+    .edu-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px 18px;
+        margin-top: 2px;
+        font-size: 9pt;
+    }
+    .edu-stats span strong { color: var(--ink); }
+    .coursework-line {
+        margin-top: 2.5px;
+        font-size: 9pt;
+        color: var(--muted);
+    }
+    .coursework-line strong { color: var(--ink); font-weight: 700; }
+
+    /* Two column grid for Activities/Honors */
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 24px;
+    }
+
+    .chip-list { margin-top: 1px; break-inside: avoid-page; page-break-inside: avoid; }
+    .chip-list li { list-style: none; margin: 0 0 0.5px 0; padding-left: 12px; position: relative; font-size: 8.7pt; }
+    .chip-list li::before { content: "\2022"; color: var(--accent); position: absolute; left: 0; font-weight: 700; }
+    .chip-list .chip-date { color: var(--muted); font-size: 8.5pt; }
+
+    .honors-list { margin: 0; padding: 0; list-style: none; break-inside: avoid-page; page-break-inside: avoid; }
+    .honors-list li {
+        padding: 1px 0;
+        border-bottom: 0.5px dotted var(--rule);
+        font-size: 9pt;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .honors-list li:last-child { border-bottom: none; }
+    .honors-list .h-name { font-weight: 600; }
+    .honors-list .h-org { color: var(--muted); font-weight: 400; font-size: 8.7pt; }
+    .honors-list .h-date { color: var(--muted); white-space: nowrap; font-size: 8.5pt; }
+
+    footer.refs {
+        margin-top: 6px;
+        padding-top: 4px;
+        border-top: 0.75px solid var(--rule);
+        font-size: 8.3pt;
+        color: var(--muted);
+        text-align: center;
+        font-style: italic;
+    }
+
+    @media print {
+        body { font-size: 10pt; }
+    }
+</style>
+</head>
+<body>
+<div class="page">
+
+    <header class="resume-header">
+        <div>
+            <div class="name">Oviya Sivakumar</div>
+            <div class="role">Student &middot; Athlete &middot; Community Leader</div>
+        </div>
+        <div class="contact-block">
+            Medway, Massachusetts<br>
+            <a href="tel:7744148865">(774) 414-8865</a><br>
+            <a href="mailto:oviya.sivan@gmail.com">oviya.sivan@gmail.com</a><br>
+            <a href="mailto:osivakumar@student.medwayschools.org">osivakumar@student.medwayschools.org</a>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">Education</h2>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Medway High School <span class="entry-org">&mdash; Medway, MA</span></span>
+                <span class="entry-date">Graduating June 2027</span>
+            </div>
+            <div class="edu-stats">
+                <span><strong>GPA:</strong> 6.564/7.0 (Weighted) &middot; 3.8/4.0 (Unweighted)</span>
+                <span><strong>Rank:</strong> School does not rank (class of 138)</span>
+                <span><strong>SAT:</strong> 1470 (EBRW 690 &middot; Math 780)</span>
+                <span><strong>PSAT:</strong> 1320</span>
+            </div>
+            <div class="coursework-line"><strong>AP Coursework:</strong> Statistics (5), Physics (4), Environmental Science (4), English Language (4), U.S. History (4), European History (4), Computer Science A (3), Psychology*, Calculus AB*, French* &nbsp;<em>(*in progress)</em></div>
+            <div class="coursework-line"><strong>Honors Coursework:</strong> Math II, Precalculus, Chemistry, Biology, English I &amp; II, Introduction to Engineering, U.S. History I, French II&ndash;IV</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Internship Experience</h2>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">WBLA Data Analysis Internship <span class="entry-org">&mdash; City of Saint John, New Brunswick, Canada</span></span>
+                <span class="entry-date">Jan 2026 &ndash; Mar 2026</span>
+            </div>
+            <div class="entry-sub">Paid Intern &amp; Team Lead</div>
+            <ul class="bullets">
+                <li>Analyzed financial data and municipal spending with a team to identify ways to reduce costs and improve efficiency</li>
+                <li>Served as team lead, organizing tasks, keeping the team on track, and coordinating project completion</li>
+                <li>Presented findings and recommendations to WBLA managers</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Finance &amp; IT Internship <span class="entry-org">&mdash; Waters Corporation, Milford, MA</span></span>
+                <span class="entry-date">Summer 2026</span>
+            </div>
+            <ul class="bullets">
+                <li>Researched KPIs to benchmark Waters Corporation's performance against competitors</li>
+                <li>Developed a specialized KPI model to improve performance tracking and identify trends</li>
+                <li>Presented findings and recommendations to corporate managers</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Crew Member <span class="entry-org">&mdash; Black Cow, Millis, MA</span></span>
+                <span class="entry-date">June 2026 &ndash; Current</span>
+            </div>
+            <ul class="bullets">
+                <li>Provide customer service in a fast-paced environment; prepare drinks and food following safe food-handling standards</li>
+                <li>Handle cash transactions and opening/closing duties (20+ hrs/week)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Leadership &amp; Athletics</h2>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Cross Country &mdash; Varsity Team Captain <span class="entry-org">&mdash; Medway High School</span></span>
+                <span class="entry-date">2025 &ndash; Present</span>
+            </div>
+            <ul class="bullets">
+                <li>Selected as varsity captain; organized summer captains' practices and led younger teammates, fostering an inclusive team culture; never missed a practice or meet</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Winter Track &amp; Field &mdash; Varsity <span class="entry-org">&mdash; Medway High School</span></span>
+                <span class="entry-date">2024 &ndash; Present</span>
+            </div>
+            <ul class="bullets">
+                <li>Competed in the 2-mile (first-place finish), 1 mile, 1000m, and 4x400m relay; recipient of the Unsung Hero Award (2026)</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Spring Track &amp; Field &mdash; Junior Varsity <span class="entry-org">&mdash; Medway High School</span></span>
+                <span class="entry-date">2023 &ndash; Present</span>
+            </div>
+            <ul class="bullets">
+                <li>Competed in the 800m, 1 mile, and 4x400m relay; never missed a practice or meet</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Student Council &mdash; Treasurer <span class="entry-org">&mdash; Medway High School</span></span>
+                <span class="entry-date">2023 &ndash; Present</span>
+            </div>
+            <ul class="bullets">
+                <li>Assist in organizing and planning community and school events (pep rallies, dances) to build school spirit</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Community Service</h2>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Volunteer <span class="entry-org">&mdash; Medway Village Food Pantry, Medway, MA</span></span>
+                <span class="entry-date">Sept 2023 &ndash; Present</span>
+            </div>
+            <ul class="bullets">
+                <li>Organized food orders and managed distribution carts in a fast-paced environment; 200+ hours of service; recipient of multiple service awards</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Teacher Assistant <span class="entry-org">&mdash; Shishu Bharati, Walpole, MA</span></span>
+                <span class="entry-date">Sept 2024 &ndash; Present</span>
+            </div>
+            <ul class="bullets">
+                <li>Assisted lead instructors with weekly cultural and language lessons for students ages 5&ndash;13; created hands-on educational games and activities; 200+ hours of service</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">Volunteer Tutor <span class="entry-org">&mdash; Spoken English Academy, Chennai, India</span></span>
+                <span class="entry-date">Sept 2022 &ndash; 2025</span>
+            </div>
+            <ul class="bullets">
+                <li>Helped empower women by teaching English to non-English-speaking female students (ages 8&ndash;14) through weekly Zoom lessons, improving literacy and communication skills</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Activities &amp; Certifications</h2>
+        <ul class="chip-list two-col">
+            <li>Science Olympiad <span class="chip-date">&mdash; Silver Medal, Physiology &amp; Anatomy and Code Busters (2024) &middot; 2024&ndash;Present</span></li>
+            <li>Art Club <span class="chip-date">&mdash; Independent studio courses; taught drawing workshops to elementary students &middot; 2023&ndash;Present</span></li>
+            <li>Women in STEM Club <span class="chip-date">&mdash; 2024&ndash;Present</span></li>
+            <li>Math Team <span class="chip-date">&mdash; 2023&ndash;2024</span></li>
+            <li>Best Buddies Club <span class="chip-date">&mdash; 2024&ndash;2025</span></li>
+            <li>Massachusetts Licensed Driver <span class="chip-date">&mdash; June 2026</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">Honors &amp; Awards</h2>
+        <ul class="honors-list">
+            <li><span class="h-name">Medway High School Honor Roll</span><span class="h-org">Academic</span><span class="h-date">2024, 2025, 2026</span></li>
+            <li><span class="h-name">National Honor Society</span><span class="h-org">Academic</span><span class="h-date">2025&ndash;Present</span></li>
+            <li><span class="h-name">French Honor Society</span><span class="h-org">Academic</span><span class="h-date">2025&ndash;Present</span></li>
+            <li><span class="h-name">College Board AP Scholar</span><span class="h-org">Academic</span><span class="h-date">2025</span></li>
+            <li><span class="h-name">College Board AP Scholar with Distinction</span><span class="h-org">Academic</span><span class="h-date">2026</span></li>
+            <li><span class="h-name">Gold President's Volunteer Service Award</span><span class="h-org">Medway Village Food Pantry</span><span class="h-date">2024&ndash;2025</span></li>
+            <li><span class="h-name">Marilyn Conley Volunteer Service Award</span><span class="h-org">Medway Village Food Pantry</span><span class="h-date">2025&ndash;2026</span></li>
+            <li><span class="h-name">Student Volunteer Award</span><span class="h-org">Shishu Bharati</span><span class="h-date">2025, 2026</span></li>
+            <li><span class="h-name">Business &amp; Leadership Award</span><span class="h-org">Rochester Institute of Technology</span><span class="h-date">2026</span></li>
+            <li><span class="h-name">Winter Track &amp; Field Unsung Hero Award</span><span class="h-org">Medway High School</span><span class="h-date">2026</span></li>
+            <li><span class="h-name">Diploma in Tamil Language Fluency</span><span class="h-org">Shishu Bharati</span><span class="h-date">2024</span></li>
+        </ul>
+    </section>
+
+    <footer class="refs">References available upon request.</footer>
+
+</div>
+</body>
+</html>
