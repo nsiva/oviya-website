@@ -1050,14 +1050,14 @@ img[src*="academic-honors.jpeg"] {
   cursor: pointer;
 }
 
-.back-to-top-container {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e0e0e0;
-}
-
 .back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -1071,6 +1071,11 @@ img[src*="academic-honors.jpeg"] {
     transition: all 0.3s ease;
 }
 
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 .back-to-top:hover {
     transform: translateY(-2px);
     text-decoration: none;
@@ -1079,4 +1084,23 @@ img[src*="academic-honors.jpeg"] {
 
 .back-to-top i {
     font-size: 0.8rem;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #9b59b6;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.service-card .card-link i {
+    font-size: 0.75rem;
+    margin: 0 0 0 0.25rem;
+    color: inherit;
 }

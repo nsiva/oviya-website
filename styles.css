@@ -707,12 +707,13 @@ img[src*="food-volunteer-media-recognition.png"] {
 }
 
 /* -------------------- footer / back to top -------------------- */
-.back-to-top-container {
-    text-align: center;
-    margin-top: 3rem;
-}
-
 .back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -725,6 +726,11 @@ img[src*="food-volunteer-media-recognition.png"] {
     font-weight: 700;
     font-size: 0.9rem;
     transition: all 0.25s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .back-to-top:hover {
@@ -873,4 +879,19 @@ img[src*="food-volunteer-media-recognition.png"] {
         width: 100%;
         justify-content: center;
     }
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--coral);
+    word-break: break-word;
+}
+
+.service-card .card-link i {
+    font-size: 0.75rem;
+    margin: 0 0 0 0.25rem;
+    color: inherit;
 }
